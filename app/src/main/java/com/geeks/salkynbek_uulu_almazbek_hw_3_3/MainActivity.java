@@ -30,21 +30,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void addName(){
-        arrayListNames.add("Madina");
-        arrayListNames.add("Yryskeldi");
-        arrayListNames.add("Chyngyz");
-        arrayListNames.add("Radmir");
-        arrayListNames.add("Kamal");
-        arrayListNames.add("Iskender");
-        arrayListNames.add("Almanbet");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
-        arrayListNames.add("Almazbek");
+        arrayListNames.add("Madina Madinovna");
+        arrayListNames.add("Yryskeldi Yryskeldiev");
+        arrayListNames.add("Chyngyz Chyngyzov");
+        arrayListNames.add("Radmir Radmirov");
+        arrayListNames.add("Kamal Kamalov");
+        arrayListNames.add("Iskender Iskenderov");
+        arrayListNames.add("Almanbet Almanbetov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add("Almazbek Almazbekov");
+
     }
 
     public void newElements(){
