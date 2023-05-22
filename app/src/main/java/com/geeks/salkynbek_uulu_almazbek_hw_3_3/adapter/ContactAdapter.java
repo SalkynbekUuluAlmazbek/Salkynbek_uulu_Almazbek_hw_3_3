@@ -6,16 +6,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.geeks.salkynbek_uulu_almazbek_hw_3_3.Product;
 import com.geeks.salkynbek_uulu_almazbek_hw_3_3.R;
 
 import java.util.ArrayList;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
 
-    ArrayList<String> newArrayList;
+    ArrayList<Product> newArrayList;
+    OnItemClick adapterClick;
 
-    public ContactAdapter(ArrayList<String>arrayList) {
-        newArrayList = arrayList;
+    public ContactAdapter(ArrayList<Product>arrayList,
+                          OnItemClick onItemClick) {
+              newArrayList = arrayList;
+              adapterClick = onItemClick;
     }
     @NonNull
     @Override
@@ -28,6 +32,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
 
         holder.onBind(newArrayList.get(position));
+        holder.icon.setOnClickListener(view -> {
+            adapterClick.OnItemClick(newArrayList.get(position));
+        });
 
     }
 

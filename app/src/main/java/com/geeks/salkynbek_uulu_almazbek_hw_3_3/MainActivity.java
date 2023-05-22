@@ -3,15 +3,17 @@ package com.geeks.salkynbek_uulu_almazbek_hw_3_3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.geeks.salkynbek_uulu_almazbek_hw_3_3.adapter.ContactAdapter;
+import com.geeks.salkynbek_uulu_almazbek_hw_3_3.adapter.OnItemClick;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClick {
 
-    ArrayList<String> arrayListNames = new ArrayList<>();
+    ArrayList<Product> arrayListNames = new ArrayList<>();
 
     ContactAdapter adapter;
 
@@ -30,27 +32,33 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void addName(){
-        arrayListNames.add("Madina Madinovna");
-        arrayListNames.add("Yryskeldi Yryskeldiev");
-        arrayListNames.add("Chyngyz Chyngyzov");
-        arrayListNames.add("Radmir Radmirov");
-        arrayListNames.add("Kamal Kamalov");
-        arrayListNames.add("Iskender Iskenderov");
-        arrayListNames.add("Almanbet Almanbetov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
-        arrayListNames.add("Almazbek Almazbekov");
+        arrayListNames.add(new Product("Модификации и комплектации Toyota Camry VIII седан",
+                "Toyota Camry", "white", R.drawable.images_camry,32000));
+        arrayListNames.add(new Product("Модификации и комплектации Toyota Corolla XII седан",
+                "Toyota Corolla", "black", R.drawable.car_carolla,25000));
+        arrayListNames.add(new Product("Модификации и комплектации Toyota Camry VIII седан",
+                "Toyota Camry", "black", R.drawable.images_camry,32000));
+        arrayListNames.add(new Product("Модификации и комплектации Toyota Camry VIII седан",
+                "Toyota Camry", "black", R.drawable.images_camry,32000));
+
+
 
     }
 
     public void newElements(){
-        adapter = new ContactAdapter(arrayListNames);
+        adapter = new ContactAdapter(arrayListNames, this);
         recyclerView = findViewById(R.id.recyclerView);
+    }
+
+    @Override
+    public void OnItemClick(Product product) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        intent.putExtra("image", product.getImage());
+        intent.putExtra("title", product.getTitle());
+        intent.putExtra("name", product.getName());
+        intent.putExtra("color",product.getColor());
+        intent.putExtra("sum", product.getSum());
+        startActivity(intent);
+
     }
 }

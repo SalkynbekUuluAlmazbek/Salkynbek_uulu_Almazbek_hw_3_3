@@ -8,9 +8,10 @@
 
     <ImageView
         android:id="@+id/imageViewIcon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toEndOf="@id/titleTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -19,7 +20,7 @@
         android:id="@+id/textViewName"
         android:text="Name"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:layout_width="0dp"
         android:padding="16dp"
         android:textStyle="bold"
@@ -28,6 +29,39 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewIcon"/>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Title"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewName"
+        app:layout_constraintStart_toEndOf="@id/imageViewIcon"/>
+
+    <TextView
+        android:id="@+id/colorTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:text="Color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/sumTextView"
+        app:layout_constraintStart_toEndOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
+
+    <TextView
+        android:id="@+id/sumTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sum"
+        android:textSize="24sp"
+        android:layout_marginStart="150dp"
+        app:layout_constraintStart_toStartOf="@id/titleTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/colorTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
